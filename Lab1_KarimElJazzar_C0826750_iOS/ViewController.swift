@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var finished = false
     var noughtScore = 0
     var crossScore = 0
+    var crossFirst = true
     
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var topMidButton: UIButton!
@@ -55,18 +56,33 @@ class ViewController: UIViewController {
             result.text = ""
             alert.text = ""
             finished = false
+            if(crossFirst == true){
+                crossFirst = false
+            }else{
+                crossFirst = true
+            }
         }
     }
 
     @IBAction func buttonClicked(_ sender:UIButton){
         if(finished == false){
             if(sender.isSelected == false){
-                if(turn%2==0){
-                    sender.setImage(UIImage(named: "cross"), for: .normal)
-                    turn = turn + 1
+                if(crossFirst == true){
+                    if(turn%2==0){
+                        sender.setImage(UIImage(named: "cross"), for: .normal)
+                        turn = turn + 1
+                    }else{
+                        sender.setImage(UIImage(named: "nought"), for: .normal)
+                        turn = turn + 1
+                    }
                 }else{
-                    sender.setImage(UIImage(named: "nought"), for: .normal)
-                    turn = turn + 1
+                    if(turn%2==0){
+                        sender.setImage(UIImage(named: "nought"), for: .normal)
+                        turn = turn + 1
+                    }else{
+                        sender.setImage(UIImage(named: "cross"), for: .normal)
+                        turn = turn + 1
+                    }
                 }
             }
         
