@@ -84,9 +84,7 @@ class ViewController: UIViewController {
             alert.text = "Swipe right to start a new game"
             noughtS.text = "Nought : \(noughtScore)"
             finished = true
-        }
-        
-        if(turn == 9){
+        }else if(turn == 9){
             result.text = "It is a draw!"
             alert.text = "Swipe right to start a new game"
             finished = true
