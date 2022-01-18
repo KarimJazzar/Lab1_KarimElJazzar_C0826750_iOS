@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     var turn = 0
     var finished = false
+    var noughtScore = 0
+    var crossScore = 0
     
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var topMidButton: UIButton!
@@ -21,10 +23,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomMidButton: UIButton!
     @IBOutlet weak var bottomRightButton: UIButton!
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var crossS: UILabel!
+    @IBOutlet weak var noughtS: UILabel!
+    @IBOutlet weak var alert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func swiped(g: UISwipeGestureRecognizer){
+        if(finished == true){
+            turn = 0
+            var buttons: [UIButton] = []
+            buttons.append(topLeftButton)
+            buttons.append(topMidButton)
+            buttons.append(topRightButton)
+            buttons.append(midLeftButton)
+            buttons.append(midMidButton)
+            buttons.append(midRightButton)
+            buttons.append(bottomLeftButton)
+            buttons.append(bottomMidButton)
+            buttons.append(bottomRightButton)
+            
+            for but in buttons{
+                but.setImage(nil, for: .normal)
+                but.isSelected = false
+            }
+            result.text = ""
+            alert.text = ""
+            finished = false
+        }
     }
 
     @IBAction func buttonClicked(_ sender:UIButton){
@@ -38,16 +69,28 @@ class ViewController: UIViewController {
                     turn = turn + 1
                 }
             }
-        }
+        
         
         sender.isSelected = true
         if(checkWinCross(but1: topLeftButton, but2: topMidButton, but3: topRightButton) || checkWinCross(but1: midLeftButton, but2: midMidButton, but3: midRightButton) || checkWinCross(but1: bottomLeftButton, but2: bottomMidButton, but3: bottomRightButton) || checkWinCross(but1: topLeftButton, but2: midLeftButton, but3: bottomLeftButton) || checkWinCross(but1: topMidButton, but2: midMidButton, but3: bottomMidButton) || checkWinCross(but1: topRightButton, but2: midRightButton, but3: bottomRightButton) || checkWinCross(but1: topLeftButton, but2: midMidButton, but3: bottomRightButton) || checkWinCross(but1: topRightButton, but2: midMidButton, but3: bottomLeftButton)){
-            result.text = "Cross is the winner!\nSwipe to start a new game"
+            result.text = "Cross is the winner!"
+            alert.text = "Swipe right to start a new game"
+            crossScore = crossScore + 1
+            crossS.text = "Cross : \(crossScore)"
             finished = true
         }else if(checkWinNought(but1: topLeftButton, but2: topMidButton, but3: topRightButton) || checkWinNought(but1: midLeftButton, but2: midMidButton, but3: midRightButton) || checkWinNought(but1: bottomLeftButton, but2: bottomMidButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midLeftButton, but3: bottomLeftButton) || checkWinNought(but1: topMidButton, but2: midMidButton, but3: bottomMidButton) || checkWinNought(but1: topRightButton, but2: midRightButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midMidButton, but3: bottomRightButton) || checkWinNought(but1: topRightButton, but2: midMidButton, but3: bottomLeftButton)){
-
+            noughtScore = noughtScore + 1
             result.text = "Nought is the winner!"
+            alert.text = "Swipe right to start a new game"
+            noughtS.text = "Nought : \(noughtScore)"
             finished = true
+        }
+        
+        if(turn == 9){
+            result.text = "It is a draw!"
+            alert.text = "Swipe right to start a new game"
+            finished = true
+        }
         }
     }
     

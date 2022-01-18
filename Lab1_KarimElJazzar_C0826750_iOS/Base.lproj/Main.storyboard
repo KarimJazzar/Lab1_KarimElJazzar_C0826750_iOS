@@ -106,7 +106,28 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-D8-fLd">
                                 <rect key="frame" x="50" y="125" width="314" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cross: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-2A-pIm">
+                                <rect key="frame" x="20" y="44" width="120" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nought: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itv-ML-LPU">
+                                <rect key="frame" x="296" y="43" width="118" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f59-PZ-UyN">
+                                <rect key="frame" x="66" y="106" width="282" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -127,12 +148,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alert" destination="f59-PZ-UyN" id="Fih-Re-6S1"/>
                         <outlet property="bottomLeftButton" destination="BTC-MO-xQd" id="Sxj-Hd-4l6"/>
                         <outlet property="bottomMidButton" destination="NLC-Nw-LCj" id="ZOd-5h-c8O"/>
                         <outlet property="bottomRightButton" destination="qdq-r5-kKX" id="mP4-Wi-wPC"/>
+                        <outlet property="crossS" destination="tqB-2A-pIm" id="xor-Lt-lFM"/>
                         <outlet property="midLeftButton" destination="RS7-99-9eC" id="w0M-vW-hVC"/>
                         <outlet property="midMidButton" destination="kzH-G6-J48" id="vld-ac-cW4"/>
                         <outlet property="midRightButton" destination="eRa-VA-68E" id="9Q2-9b-JWi"/>
+                        <outlet property="noughtS" destination="itv-ML-LPU" id="zcT-OP-cup"/>
                         <outlet property="result" destination="EHk-D8-fLd" id="1aV-2W-PKx"/>
                         <outlet property="topLeftButton" destination="jFL-6y-4Yb" id="wFb-8z-rvW"/>
                         <outlet property="topMidButton" destination="yKK-FY-TWn" id="U3A-1H-2Pp"/>
@@ -148,8 +172,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
