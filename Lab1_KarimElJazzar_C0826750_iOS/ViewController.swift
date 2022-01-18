@@ -92,13 +92,13 @@ class ViewController: UIViewController {
             result.text = "Cross is the winner!"
             alert.text = "Swipe right to start a new game"
             crossScore = crossScore + 1
-            crossS.text = "Cross : \(crossScore)"
+            crossS.text = "Cross (Player 1): \(crossScore)"
             finished = true
         }else if(checkWinNought(but1: topLeftButton, but2: topMidButton, but3: topRightButton) || checkWinNought(but1: midLeftButton, but2: midMidButton, but3: midRightButton) || checkWinNought(but1: bottomLeftButton, but2: bottomMidButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midLeftButton, but3: bottomLeftButton) || checkWinNought(but1: topMidButton, but2: midMidButton, but3: bottomMidButton) || checkWinNought(but1: topRightButton, but2: midRightButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midMidButton, but3: bottomRightButton) || checkWinNought(but1: topRightButton, but2: midMidButton, but3: bottomLeftButton)){
             noughtScore = noughtScore + 1
             result.text = "Nought is the winner!"
             alert.text = "Swipe right to start a new game"
-            noughtS.text = "Nought : \(noughtScore)"
+            noughtS.text = "Nought (Player 2): \(noughtScore)"
             finished = true
         }else if(turn == 9){
             result.text = "It is a draw!"
