@@ -13,6 +13,11 @@
 		65D48A43279628D500880817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D48A41279628D500880817 /* Main.storyboard */; };
 		65D48A45279628DD00880817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D48A44279628DD00880817 /* Assets.xcassets */; };
 		65D48A48279628DD00880817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D48A46279628DD00880817 /* LaunchScreen.storyboard */; };
+		65FA7822279F6E6600721191 /* State.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65FA7820279F6E6600721191 /* State.xcdatamodeld */; };
+		65FA7825279F758400721191 /* GameScores+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA7823279F758400721191 /* GameScores+CoreDataClass.swift */; };
+		65FA7826279F758400721191 /* GameScores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA7824279F758400721191 /* GameScores+CoreDataProperties.swift */; };
+		65FA782E279F893300721191 /* GameState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA782C279F893300721191 /* GameState+CoreDataClass.swift */; };
+		65FA782F279F893300721191 /* GameState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA782D279F893300721191 /* GameState+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		65D48A44279628DD00880817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65D48A47279628DD00880817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65D48A49279628DD00880817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65FA7821279F6E6600721191 /* State.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = State.xcdatamodel; sourceTree = "<group>"; };
+		65FA7823279F758400721191 /* GameScores+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScores+CoreDataClass.swift"; sourceTree = "<group>"; };
+		65FA7824279F758400721191 /* GameScores+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScores+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		65FA782C279F893300721191 /* GameState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		65FA782D279F893300721191 /* GameState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,7 @@
 		65D48A2F279628D400880817 = {
 			isa = PBXGroup;
 			children = (
+				65FA7827279F759100721191 /* Models */,
 				65D48A3A279628D500880817 /* Lab1_KarimElJazzar_C0826750_iOS */,
 				65D48A39279628D500880817 /* Products */,
 			);
@@ -63,8 +74,20 @@
 				65D48A44279628DD00880817 /* Assets.xcassets */,
 				65D48A46279628DD00880817 /* LaunchScreen.storyboard */,
 				65D48A49279628DD00880817 /* Info.plist */,
+				65FA7820279F6E6600721191 /* State.xcdatamodeld */,
 			);
 			path = Lab1_KarimElJazzar_C0826750_iOS;
+			sourceTree = "<group>";
+		};
+		65FA7827279F759100721191 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65FA782C279F893300721191 /* GameState+CoreDataClass.swift */,
+				65FA782D279F893300721191 /* GameState+CoreDataProperties.swift */,
+				65FA7823279F758400721191 /* GameScores+CoreDataClass.swift */,
+				65FA7824279F758400721191 /* GameScores+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FA7826279F758400721191 /* GameScores+CoreDataProperties.swift in Sources */,
 				65D48A40279628D500880817 /* ViewController.swift in Sources */,
 				65D48A3C279628D500880817 /* AppDelegate.swift in Sources */,
+				65FA782F279F893300721191 /* GameState+CoreDataProperties.swift in Sources */,
 				65D48A3E279628D500880817 /* SceneDelegate.swift in Sources */,
+				65FA7825279F758400721191 /* GameScores+CoreDataClass.swift in Sources */,
+				65FA7822279F6E6600721191 /* State.xcdatamodeld in Sources */,
+				65FA782E279F893300721191 /* GameState+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +367,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65FA7820279F6E6600721191 /* State.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65FA7821279F6E6600721191 /* State.xcdatamodel */,
+			);
+			currentVersion = 65FA7821279F6E6600721191 /* State.xcdatamodel */;
+			path = State.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65D48A30279628D400880817 /* Project object */;
 }

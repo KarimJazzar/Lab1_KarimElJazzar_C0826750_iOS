@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GameScores" representedClassName="GameScores" syncable="YES">
+        <attribute name="player1Score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="player2Score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="GameState" representedClassName="GameState" syncable="YES">
+        <attribute name="bottomLeft" optional="YES" attributeType="String"/>
+        <attribute name="bottomMid" optional="YES" attributeType="String"/>
+        <attribute name="bottomRight" optional="YES" attributeType="String"/>
+        <attribute name="crossFirst" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="midLeft" optional="YES" attributeType="String"/>
+        <attribute name="midMid" optional="YES" attributeType="String"/>
+        <attribute name="midRight" optional="YES" attributeType="String"/>
+        <attribute name="topLeft" optional="YES" attributeType="String"/>
+        <attribute name="topMid" optional="YES" attributeType="String"/>
+        <attribute name="topRight" optional="YES" attributeType="String"/>
+        <attribute name="turn" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="GameScores" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="GameState" positionX="-36" positionY="27" width="128" height="194"/>
+    </elements>
+</model>
