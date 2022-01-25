@@ -158,6 +158,7 @@ class ViewController: UIViewController {
             result.text = ""
             alert.text = ""
             finished = false
+            
             if(crossFirst == true){
                 crossFirst = false
                 tL = ""
@@ -184,10 +185,6 @@ class ViewController: UIViewController {
                 bR = ""
                 changeGameState(turn: turn, tL: "", tM: "", tR: "", mL: "", mM: "", mR: "", bL: "", bM: "", bR: "", cFirst: true)
             }
-            
-
-            //fetchGameState()
-            
         }
     }
     
@@ -223,6 +220,44 @@ class ViewController: UIViewController {
         default: break
             
         }
+    }
+    
+    func revertOriginal(){
+            fetchGameState()
+            deleteGameStates()
+            turn = 0
+            
+            for but in buttons{
+                but.isSelected = false
+            }
+            
+            if(crossFirst == true){
+                crossFirst = false
+                tL = ""
+                tM = ""
+                tR = ""
+                mL = ""
+                mM = ""
+                mR = ""
+                bL = ""
+                bM = ""
+                bR = ""
+                
+                changeGameState(turn: turn, tL: "", tM: "", tR: "", mL: "", mM: "", mR: "", bL: "", bM: "", bR: "", cFirst: false)
+            }else{
+                crossFirst = true
+                tL = ""
+                tM = ""
+                tR = ""
+                mL = ""
+                mM = ""
+                mR = ""
+                bL = ""
+                bM = ""
+                bR = ""
+                changeGameState(turn: turn, tL: "", tM: "", tR: "", mL: "", mM: "", mR: "", bL: "", bM: "", bR: "", cFirst: true)
+            }
+        
     }
 
     @IBAction func buttonClicked(_ sender:UIButton){
@@ -266,6 +301,7 @@ class ViewController: UIViewController {
             changeGameScores(p1: crossScore, p2: noughtScore)
             crossS.text = "Cross (Player 1): \(crossScore)"
             finished = true
+            revertOriginal()
         }else if(checkWinNought(but1: topLeftButton, but2: topMidButton, but3: topRightButton) || checkWinNought(but1: midLeftButton, but2: midMidButton, but3: midRightButton) || checkWinNought(but1: bottomLeftButton, but2: bottomMidButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midLeftButton, but3: bottomLeftButton) || checkWinNought(but1: topMidButton, but2: midMidButton, but3: bottomMidButton) || checkWinNought(but1: topRightButton, but2: midRightButton, but3: bottomRightButton) || checkWinNought(but1: topLeftButton, but2: midMidButton, but3: bottomRightButton) || checkWinNought(but1: topRightButton, but2: midMidButton, but3: bottomLeftButton)){
             noughtScore = noughtScore + 1
             result.text = "Nought is the winner!"
@@ -273,11 +309,12 @@ class ViewController: UIViewController {
             changeGameScores(p1: crossScore, p2: noughtScore)
             noughtS.text = "Nought (Player 2): \(noughtScore)"
             finished = true
-            deleteGameStates()
+            revertOriginal()
         }else if(turn == 9){
             result.text = "It is a draw!"
             alert.text = "Swipe right to start a new game"
             finished = true
+            revertOriginal()
         }
         }
     }
